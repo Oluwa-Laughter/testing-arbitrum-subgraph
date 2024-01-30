@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: arbitrum
@@ -21,7 +21,7 @@ dataSources:
         - Upgraded
       abis:
         - name: arbitrum
-          file: ./abis/arbitrum.json
+          file: arbitrum/abis/arbitrum.json
       eventHandlers:
         - event: AdminChanged(address,address)
           handler: handleAdminChanged
@@ -29,4 +29,4 @@ dataSources:
           handler: handleBeaconUpgraded
         - event: Upgraded(indexed address)
           handler: handleUpgraded
-      file: ./src/arbitrum.ts
+      file: arbitrum/arbitrum.wasm
